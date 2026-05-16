@@ -66,3 +66,10 @@ updateMode(mediaQuery);
 
 // Listen for changes in the system theme
 mediaQuery.addEventListener('change', updateMode);
+
+// Re-apply if Gmail's SPA navigation removes the injected style
+new MutationObserver(() => {
+  if (mediaQuery.matches && !document.getElementById("dark-mode-style")) {
+    applyDarkMode();
+  }
+}).observe(document.head, { childList: true });
