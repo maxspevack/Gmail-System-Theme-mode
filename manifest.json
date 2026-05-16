@@ -3,10 +3,6 @@
     "name": "Gmail Dark Mode Toggle",
     "version": "1.0",
     "description": "Automatically switches Gmail between dark and light mode based on system settings.",
-    "permissions": [
-      "activeTab",
-      "scripting"
-    ],
     "content_scripts": [
     {
         "matches": ["https://mail.google.com/*"],
@@ -14,9 +10,6 @@
         "run_at": "document_idle"
     }
     ],
-    "background": {
-      "service_worker": "background.js"
-    },
     "action": {
       "default_popup": "popup.html"
     },
